@@ -9,12 +9,21 @@ public class SmartGoogleUser extends SmartUser {
     private String displayName;
     private String photoUrl;
     private String idToken;
+    private String Token;
     private String Email;
     private String Id;
     private String GivenName;
     private String FamilyName;
 
     public SmartGoogleUser() {
+    }
+
+    public String getToken() {
+        return Token;
+    }
+
+    public void setToken(String token) {
+        Token = token;
     }
 
     public String getDisplayName() {

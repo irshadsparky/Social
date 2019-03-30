@@ -4,7 +4,7 @@ public class SmartTwitterUser extends SmartUser {
 
     private String displayName;
     private String photoUrl;
-    private String idToken;
+    private String Token;
     private String Email;
     private String Id;
     private String GivenName;
@@ -12,6 +12,14 @@ public class SmartTwitterUser extends SmartUser {
     private String screenName;
 
     public SmartTwitterUser() {
+    }
+
+    public String getToken() {
+        return Token;
+    }
+
+    public void setToken(String token) {
+        Token = token;
     }
 
     public String getScreenName() {
@@ -38,13 +46,6 @@ public class SmartTwitterUser extends SmartUser {
         this.photoUrl = photoUrl;
     }
 
-    public String getIdToken() {
-        return idToken;
-    }
-
-    public void setIdToken(String idToken) {
-        this.idToken = idToken;
-    }
 
     @Override
     public String getEmail() {

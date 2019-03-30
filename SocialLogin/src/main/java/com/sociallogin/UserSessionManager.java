@@ -2,7 +2,6 @@ package com.sociallogin;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.sociallogin.users.SmartFacebookUser;
@@ -10,6 +9,7 @@ import com.sociallogin.users.SmartGoogleUser;
 import com.sociallogin.users.SmartLinkdinUser;
 import com.sociallogin.users.SmartUser;
 import com.sociallogin.util.Constants;
+import com.sociallogin.util.Log;
 
 /**
  * Copyright (c) 2016 Codelight Studios

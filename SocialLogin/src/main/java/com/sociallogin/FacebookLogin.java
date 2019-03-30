@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -15,6 +14,7 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.sociallogin.users.SmartFacebookUser;
 import com.sociallogin.util.Constants;
+import com.sociallogin.util.Log;
 import com.sociallogin.util.SmartLoginException;
 import com.sociallogin.util.UserUtil;
 

@@ -32,7 +32,6 @@ public class UserUtil {
         if (account.getAccount() != null) {
             googleUser.setUsername(account.getAccount().name);
         }
-
         //return the populated google user
         return googleUser;
     }
@@ -112,7 +111,7 @@ public class UserUtil {
                 }
 
 
-                smartLinkdinUser.setIdToken(token);
+                smartLinkdinUser.setToken(token);
                 return smartLinkdinUser;
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -152,7 +151,7 @@ public class UserUtil {
         }
     }
 
-    public static SmartFacebookUser populateFacebookUser(JSONObject object,AccessToken accessToken) {
+    public static SmartFacebookUser populateFacebookUser(JSONObject object, AccessToken accessToken) {
         SmartFacebookUser facebookUser = new SmartFacebookUser();
         facebookUser.setGender(-1);
         facebookUser.setAccessToken(accessToken);

@@ -3,11 +3,11 @@ package com.sociallogin;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.facebook.login.LoginManager;
 import com.sociallogin.users.SmartTwitterUser;
 import com.sociallogin.util.Constants;
+import com.sociallogin.util.Log;
 import com.sociallogin.util.SmartLoginException;
 import com.sociallogin.util.TwitterScope;
 import com.twitter.sdk.android.core.Callback;
@@ -79,8 +79,8 @@ public class TwitterLogin extends SmartLogin {
                 @Override
                 public void success(Result<TwitterSession> result) {
                     TwitterSession twitterSession = result.data;
-                    if(twitterSession.getAuthToken().token!=null)
-                        smartTwitterUser.setIdToken(twitterSession.getAuthToken().token);
+                    if (twitterSession.getAuthToken().token != null)
+                        smartTwitterUser.setToken(twitterSession.getAuthToken().token);
                     if (isProfile && isEmail) {
                         fetchTwitterEmail(twitterSession, smartTwitterUser);
                     } else if (isProfile) {
@@ -101,7 +101,7 @@ public class TwitterLogin extends SmartLogin {
                 }
             });
         } else {
-            smartTwitterUser.setIdToken(getTwitterSession().getAuthToken().token);
+            smartTwitterUser.setToken(getTwitterSession().getAuthToken().token);
             if (isProfile && isEmail) {
                 fetchTwitterEmail(getTwitterSession(), smartTwitterUser);
             } else if (isProfile) {
@@ -151,7 +151,6 @@ public class TwitterLogin extends SmartLogin {
 
 
     //--------------------------------------------------------------------
-
 
 
     public void fetchTwitterEmail(final TwitterSession twitterSession, final SmartTwitterUser smartTwitterUser) {

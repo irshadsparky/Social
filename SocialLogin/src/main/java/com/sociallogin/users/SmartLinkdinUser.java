@@ -4,13 +4,21 @@ public class SmartLinkdinUser extends SmartUser {
 
     private String displayName;
     private String photoUrl;
-    private String idToken;
+    private String Token;
     private String Email;
     private String Id;
     private String GivenName;
     private String FamilyName;
 
     public SmartLinkdinUser() {
+    }
+
+    public String getToken() {
+        return Token;
+    }
+
+    public void setToken(String token) {
+        Token = token;
     }
 
     public String getDisplayName() {
@@ -27,14 +35,6 @@ public class SmartLinkdinUser extends SmartUser {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
-    }
-
-    public String getIdToken() {
-        return idToken;
-    }
-
-    public void setIdToken(String idToken) {
-        this.idToken = idToken;
     }
 
 

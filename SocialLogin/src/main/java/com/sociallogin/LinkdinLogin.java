@@ -3,9 +3,9 @@ package com.sociallogin;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.sociallogin.util.Constants;
+import com.sociallogin.util.Log;
 import com.sociallogin.util.SmartLoginException;
 
 public class LinkdinLogin extends SmartLogin {

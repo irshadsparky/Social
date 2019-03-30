@@ -6,13 +6,13 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.sociallogin.users.SmartLinkdinUser;
 import com.sociallogin.util.LinkedinScope;
+import com.sociallogin.util.Log;
 import com.sociallogin.util.SmartLoginException;
 import com.sociallogin.util.UserUtil;
 
@@ -295,11 +295,11 @@ public class LinkdinLoginActivity extends Activity {
                     new LoadDataApiProfile(accessToken, callback).execute();
                 } else if (isEmail) {
                     SmartLinkdinUser smartLinkdinUser = new SmartLinkdinUser();
-                    smartLinkdinUser.setIdToken(accessToken);
+                    smartLinkdinUser.setToken(accessToken);
                     new LoadDataApiEmail(callback, smartLinkdinUser).execute();
                 } else {
                     final SmartLinkdinUser smartLinkdinUser_ = new SmartLinkdinUser();
-                    smartLinkdinUser_.setIdToken(accessToken);
+                    smartLinkdinUser_.setToken(accessToken);
                     config.getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -412,7 +412,7 @@ public class LinkdinLoginActivity extends Activity {
             progressDialog.dismiss();
             final SmartLinkdinUser smartLinkdinUser = UserUtil.populateLinkdinUser(jsonObject, token);
             if (smartLinkdinUser != null) {
-                smartLinkdinUser.setIdToken(token);
+                smartLinkdinUser.setToken(token);
                 if (isEmail) {
                     new LoadDataApiEmail(callback, smartLinkdinUser).execute();
                 } else {
@@ -446,7 +446,7 @@ public class LinkdinLoginActivity extends Activity {
 
 
         LoadDataApiEmail(SmartLoginCallbacks callback, SmartLinkdinUser smartLinkdinUser) {
-            this.token = smartLinkdinUser.getIdToken();
+            this.token = smartLinkdinUser.getToken();
             this.callback = callback;
             this.smartLinkdinUser = smartLinkdinUser;
 
